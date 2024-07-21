@@ -1,6 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import MenuModal from "./Menu";
+import SearchBar from "./SearchBar";
+import NavbarIcons from "./NavbarIcons";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -8,7 +11,12 @@ export default function Navbar() {
       {/* MOBILE */}
       <div className="h-full flex items-center justify-between md:hidden">
         <Link href="/">
-          <div className="text-2xl tracking-wide">Vince</div>
+          <Image
+            src="/img/header-logo.svg"
+            alt="logo"
+            width={100}
+            height={100}
+          />
         </Link>
         <MenuModal />
       </div>
@@ -17,11 +25,19 @@ export default function Navbar() {
         {/* LEFT */}
         <div className="w-1/3">
           <Link href="/">
-            <div className="text-2xl tracking-wide">Vince</div>
+            <Image
+              src="/img/header-logo.svg"
+              alt="logo"
+              width={100}
+              height={100}
+            />
           </Link>
         </div>
         {/* RIGHT */}
-        <div className="w-2/3"></div>
+        <div className="w-2/3 flex items-center justify-between gap-8">
+          <SearchBar />
+          <NavbarIcons />
+        </div>
       </div>
     </div>
   );
