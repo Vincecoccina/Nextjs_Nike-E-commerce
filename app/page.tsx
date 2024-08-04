@@ -1,7 +1,12 @@
+import ProductList from "@/components/ProductList";
+import Slider from "@/components/Slider";
 
 
 export default function Home() {
   return (
-    <div className="">Homepage</div>
+    <div className="">
+      <Slider/>
+      <ProductList/>
+    </div>
   );
 }
