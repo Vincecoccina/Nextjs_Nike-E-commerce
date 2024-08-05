@@ -11,14 +11,22 @@ export default function NavbarIcons() {
   const [isProfilOpen, setIsProfileOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   const handleProfil = () => {
     if (!isLoggedIn) {
       router.push("/login");
+    } else {
+      setIsProfileOpen((prev) => !prev);
+      setIsCartOpen(false)
     }
-    setIsProfileOpen((prev) => !prev);
   };
+
+  const handleCartOpen = () => {
+    setIsCartOpen((prev) => !prev)
+    setIsProfileOpen(false)
+  }
+
   return (
     <div className="relative">
       <ul className="flex items-center gap-3">
@@ -29,7 +37,7 @@ export default function NavbarIcons() {
           <div className="relative">
             <button
               className="text-gray-600"
-              onClick={() => setIsCartOpen((prev) => !prev)}
+              onClick={handleCartOpen}
             >
               <ShoppingBag />
             </button>
@@ -44,7 +52,7 @@ export default function NavbarIcons() {
             <User />
           </button>
           {isProfilOpen && (
-            <div className="absolute w-[200px] p-4 rounded-md top-10 right-0 shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20">
+            <div className="absolute w-[200px] p-4 rounded-md top-10 right-0 shadow-[0_3px_10px_rgb(0,0,0,0.2)] z-20 bg-white">
               <div>
                 <Link
                   href="/"

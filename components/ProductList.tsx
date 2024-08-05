@@ -27,17 +27,26 @@ const PRODUCTS: Product[] = [
     img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/db954233-2f91-4700-bfe7-9b9e16d40d7a/W+NK+DF+PACER+HZ.png",
     price: 39.49,
   },
+  {
+    name: "Jordan Sport",
+    desc: "Haut à manches courtes Diamond pour femme",
+    img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7dbe41e5-53d4-496b-a6e3-59a0b33ad352/W+J+SPT+DIAMOND+SS+TOP.png",
+    price: 44.99,
+  },
+  {
+    name: "Nike Slam",
+    desc: "T-shirt à manches courtes Dri-FIT pour femme",
+    img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/889aab35-6e54-4dfe-a563-7321c3c6faec/W+NK+DF+SLAM+SS+TEE.png",
+    price: 34.99,
+  },
 ];
 
 export default function ProductList() {
   return (
-    <div className="px-6">
-      <h3 className="text-2xl font-[600]">En ce moment</h3>
-      <div className="gap-4 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        {PRODUCTS.map((product, index) => (
-          <ProductCard key={index} product={product} />
-        ))}
-      </div>
+    <div className="gap-4 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {PRODUCTS.map((product, index) => (
+        <ProductCard key={index} product={product} />
+      ))}
     </div>
   );
 }
