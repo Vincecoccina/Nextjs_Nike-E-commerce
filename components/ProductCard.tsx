@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href="/" className="p-4 border rounded-lg hover:scale-105 transition-all duration-500">
+    <Link  href={`/products/${product.slug}`} className="p-4 border rounded-lg hover:scale-105 transition-all duration-500">
       {/* CARD HEADER */}
       <div className="relative w-full h-[400px] overflow-hidden rounded-md">
         <Image 

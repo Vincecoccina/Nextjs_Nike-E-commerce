@@ -16,6 +16,7 @@ export type Product = {
     desc: string;
     img: string;
     price: number
+    slug: string;
 };
 
 export type Category = {
