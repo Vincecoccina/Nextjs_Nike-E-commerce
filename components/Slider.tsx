@@ -54,12 +54,12 @@ export default function Slider() {
             >
               {/* TEXT CONTAINER */}
               <div className="h-1/2 xl:w-1/2 xl:h-full flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
-                <h2 className="text-xl lg:text-3xl 2xl:text-5xl">
+                <p className="text-xl lg:text-3xl 2xl:text-5xl">
                   {slide.description}
-                </h2>
-                <h1 className="text-5xl lg:text-6xl 2xl:text-8xl font-semibold">
+                </p>
+                <p className="text-5xl lg:text-6xl 2xl:text-8xl font-semibold">
                   {slide.title}
-                </h1>
+                </p>
                 <Link href={slide.url}>
                   <button className="rounded-md bg-black text-white py-3 px-4 ">
                     SHOP NOW
@@ -96,10 +96,10 @@ export default function Slider() {
         </div>
       </div>
       <div className="h-[400px] w-full flex flex-col items-center py-7 gap-5">
-        <p className="text-6xl text-center uppercase font-bold">
-          Des Années d'efforts <br /> pour quelques secondes
-        </p>
-        <p className="text-md text-center text-gray-600">
+        <h1 className="text-6xl text-center uppercase font-roboto font-[300]">
+          Des Années d'efforts pour<br /><span className="font-bold"> quelques secondes</span>
+        </h1>
+        <p className="text-md text-center text-gray-600 font-roboto">
           Le travail de toute une vie pour un moment décisif. Découvre comment
           Sha'Carri <br /> Richardson ecrit l'histoire avec ses chronos.
         </p>

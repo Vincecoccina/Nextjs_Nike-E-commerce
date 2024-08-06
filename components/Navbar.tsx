@@ -8,7 +8,7 @@ import { LINKS } from "@/utils";
 
 export default function Navbar() {
   return (
-    <div className="h-20 px-10 relative">
+    <nav className="h-20 px-10 relative">
       {/* MOBILE */}
       <div className="h-full flex items-center justify-between lg:hidden">
         <Link href="/">
@@ -33,9 +33,9 @@ export default function Navbar() {
               height={100}
             />
           </Link>
-          <div className="hidden lg:flex items-center gap-4 font-[700] w-1/4 text-gray-600 text-sm">
+          <div className="hidden lg:flex items-center gap-4 font-[600] w-1/4 text-gray-600 text-sm font-roboto">
             {LINKS.map((link, i) => (
-              <Link href={link.link} key={i}>
+              <Link href={link.link} key={i} className="hover:text-orange-300">
                 {link.name}
               </Link>
             ))}
@@ -50,6 +50,6 @@ export default function Navbar() {
           <NavbarIcons />
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

@@ -18,3 +18,10 @@ export type Product = {
     price: number
 };
 
+export type Category = {
+    id : number,
+    name : string,
+    slug : string
+    img: string
+}
+

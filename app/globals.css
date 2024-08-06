@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Oswald";
+    src: url("/font/Oswald_regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/font/Roboto-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/font/Roboto_Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/font/Montserrat_regular.ttf") format("truetype");
+}

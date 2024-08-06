@@ -16,8 +16,8 @@ export default function ProductCard({ product }: { product: Product }) {
         />
       </div>
       <div className="mt-4">
-        <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-        <p className="text-sm text-gray-500">{product.desc}</p>
+        <h3 className="text-lg font-[700] text-gray-700 font-montserrat">{product.name}</h3>
+        <p className="text-sm text-gray-500 font-montserrat">{product.desc}</p>
         <p className="mt-2 text-xl font-bold text-gray-900">{product.price} €</p>
       </div>
     </Link>

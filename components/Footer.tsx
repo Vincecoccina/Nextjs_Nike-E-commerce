@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div>
+    <footer className='h-[500px] mt-[100px] bg-gray-200'>
       
-    </div>
+    </footer>
   )
 }

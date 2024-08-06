@@ -22,7 +22,7 @@ export default function CartModal() {
         </div>
       ) : (
         <div>
-          <h5 className="text-xl text-gray-600 font-[700]">Votre panier</h5>
+          <h3 className="text-2xl font-montserrat font-light">Votre <span className="font-[600] ">panier</span></h3>
           <div className="mt-5 flex flex-col gap-5">
             {PRODUCTS_CART.map((product) => (
               <>
@@ -39,10 +39,10 @@ export default function CartModal() {
                   <div className="w-full flex flex-col gap-4">
                     <div className="flex justify-between">
                       <div>
-                        <h3 className="text-md font-bold text-gray-800">
+                        <h4 className="text-md font-bold text-gray-800 font-montserrat">
                           {product.name}
-                        </h3>
-                        <p className="text-sm text-gray-400 font-[600]">
+                        </h4>
+                        <p className="text-sm text-gray-400 font-[600] font-montserrat">
                           {product.desc}
                         </p>
                       </div>
@@ -51,10 +51,10 @@ export default function CartModal() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-gray-600 text-sm">
+                      <span className="text-gray-600 text-sm font-montserrat">
                         Qty : {product.qty}
                       </span>
-                      <button className="text-sky-500 font-[600]">
+                      <button className="text-sky-500 font-[600] font-montserrat text-sm">
                         Remove
                       </button>
                     </div>
@@ -65,10 +65,10 @@ export default function CartModal() {
             ))}
             <div>
               <div className="text-lg font-[700] flex justify-between">
-                <p>Sous-total</p>
+              <p className="text-xl font-montserrat font-light">Sous-<span className="font-[600] ">total</span></p>
                 <p>{calculateTotal()} €</p>
               </div>
-              <div className="mt-7 flex items-center justify-between">
+              <div className="mt-7 flex items-center justify-between font-montserrat">
                 <Link
                   href="/"
                   className="px-5 py-3 bg-black text-white rounded-md"
