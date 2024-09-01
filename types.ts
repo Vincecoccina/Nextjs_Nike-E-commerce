@@ -13,10 +13,13 @@ export type ProductCart = {
 
 export type Product = {
     name: string;
+    discount: string;
     desc: string;
     img: string;
     price: number
     slug: string;
+    allSizes: string[],
+    availableSizes: string[],
 };
 
 export type Category = {

@@ -6,7 +6,7 @@ import React from "react";
 export default function CategoryCard({ category }: { category: Category }) {
   return (
     <Link
-      href="/"
+      href={`/categories/${category.slug}`}
       className="group border rounded-lg hover:scale-105 transition-transform duration-500 relative overflow-hidden"
     >
       {/* CARD HEADER */}
