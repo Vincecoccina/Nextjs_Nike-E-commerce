@@ -4,6 +4,13 @@ import ProductList from "@/components/ProductList";
 import Slider from "@/components/Slider";
 import { Category, Product } from "@/types";
 
+const getProduct = async (visibility : number) => {
+  const res = await fetch(`${process.env.URL}/api/products?visibility=${visibility}`, {
+    cache: "no-store",
+  });
+
+  return res.json();
+};
 
 const getCategories = async () => {
   const res = await fetch(`${process.env.URL}/api/categories`, {
@@ -13,82 +20,13 @@ const getCategories = async () => {
   return res.json();
 };
 
-const Home = async() => {
+const Home = async () => {
+  const { products : newProducts } = await getProduct(1);
+  const { products : iconicProducts } = await getProduct(2);
   const categories = await getCategories();
-  
-  const PRODUCTS: Product[] = [
-    {
-      name: "Nike Sportswear Tech Fleece",
-      desc: "Pantalon de jogging pour Homme",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3fdbf7f4-2e55-4be2-8eea-816f1da06482/M+NK+TCH+FLEECE+JGGR.png",
-      price: 49.99,
-      slug: "nike-sportswear-tech-fleece",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
-    {
-      name: "Air Jordan 1 Low",
-      desc: "Chaussure pour homme",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/u_126ab356-44d8-4a06-89b4-fcdcc8df0245/cd83452d-3a6c-4742-9129-3693e06a26e2/AIR+JORDAN+1+LOW.png",
-      price: 129.99,
-      slug: "air-jordan-1-low",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
-    {
-      name: "Air Jordan 1 Mid",
-      desc: "Chaussure pour homme",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/u_126ab356-44d8-4a06-89b4-fcdcc8df0245/288a2235-54ce-4f8e-a133-0117cbc381b4/AIR+JORDAN+1+MID.png",
-      price: 139.99,
-      slug: "air-jordan-1-mid",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
-    {
-      name: "Nike Dri-FIT Pacer",
-      desc: "Pull à 1/4 de zip pour Femme",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/db954233-2f91-4700-bfe7-9b9e16d40d7a/W+NK+DF+PACER+HZ.png",
-      price: 39.49,
-      slug: "nike-dri-fIT-pacer",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
-    {
-      name: "Jordan Sport",
-      desc: "Haut à manches courtes Diamond pour femme",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/7dbe41e5-53d4-496b-a6e3-59a0b33ad352/W+J+SPT+DIAMOND+SS+TOP.png",
-      price: 44.99,
-      slug: "jordan-sport",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
-    {
-      name: "Nike Slam",
-      desc: "T-shirt à manches courtes Dri-FIT pour femme",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/889aab35-6e54-4dfe-a563-7321c3c6faec/W+NK+DF+SLAM+SS+TEE.png",
-      price: 34.99,
-      slug: "nike-slam",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
-  ];
+
+
   const PRODUCTS_ICON: Product[] = [
-    {
-      name: "Nike Air Max Dn",
-      desc: "Chaussure",
-      discount: "",
-      img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6b1ebdb3-9043-492d-94bf-8ab78dccafb9/AIR+MAX+DN.png",
-      price: 169.99,
-      slug: "nike-air-max-dn",
-      allSizes: ["XS", "S", "M", "L", "XL", "XXL"],
-      availableSizes: ["S", "M", "L"],
-    },
     {
       name: "Nike Air Max Plus",
       desc: "Chaussure pour ado",
@@ -172,7 +110,7 @@ const Home = async() => {
         <h3 className="text-2xl font-montserrat font-light">
           En ce <span className="font-[600] ">moment</span>
         </h3>
-        <ProductList products={PRODUCTS} />
+        <ProductList products={newProducts} />
       </div>
       <div className="px-6 mb-[100px]">
         <h3 className="text-2xl font-montserrat font-light">
@@ -184,12 +122,12 @@ const Home = async() => {
         <h3 className="text-2xl font-montserrat font-light">
           Nos <span className="font-[600] ">modèles iconiques</span>
         </h3>
-        <ProductList products={PRODUCTS_ICON} />
+        <ProductList products={iconicProducts} />
       </div>
       <div className="px-6 mb-7">
         <Banner />
       </div>
     </div>
   );
-}
+};
 export default Home;

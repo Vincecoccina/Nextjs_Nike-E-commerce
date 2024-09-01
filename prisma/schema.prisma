@@ -19,13 +19,14 @@ model Product {
   name           String
   slug           String     @unique
   desc           String
-  discount       String
+  discount       String?
   img            String
   price          Int
   catSlug        String
   cat            Categories @relation(fields: [catSlug], references: [slug])
-  allSizes       String[]
-  availableSizes String[]
+  allSizes       String[]   @default([])
+  availableSizes String[]   @default([])
+  visibility     Int?
   createdAt      DateTime   @default(now())
 }
 
