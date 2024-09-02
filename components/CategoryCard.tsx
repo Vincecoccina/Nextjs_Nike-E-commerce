@@ -5,7 +5,7 @@ import React from "react";
 
 export default function CategoryCard({ category }: { category: Category }) {
   return (
-    <Link
+    <a
       href={`/categories/${category.slug}`}
       className="group border rounded-lg hover:scale-105 transition-transform duration-500 relative overflow-hidden"
     >
@@ -24,6 +24,6 @@ export default function CategoryCard({ category }: { category: Category }) {
         </h3>
         <div className="absolute w-full h-[70px] bottom-[50%] left-[50%] translate-y-[50%] translate-x-[-50%] bg-black opacity-25"></div>
       </div>
-    </Link>
+    </a>
   );
 }
