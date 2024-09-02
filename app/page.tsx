@@ -25,7 +25,6 @@ const Home = async () => {
   const { products : iconicProducts } = await getProduct(2);
   const categories = await getCategories();
 
-
   const PRODUCTS_ICON: Product[] = [
     {
       name: "Nike Air Max Plus",
